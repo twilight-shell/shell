@@ -6,10 +6,13 @@ import Twilight.Compositor
 import Twilight.Launcher
 import Twilight.Notifications
 import Twilight.Popouts
+import Twilight.Wallpaper
 
 // The twilight shell: every component stands on its own, and this is where
 // they are connected. The bar asks, the others open.
 ShellRoot {
+    Wallpaper {}
+
     Bar {
         activePopout: popouts.open
         launcherOpen: launcher.opened

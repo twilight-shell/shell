@@ -4,6 +4,7 @@
 #   twilight-shell ipc call launcher toggle
 #   twilight-shell lock             lock the session
 #   twilight-shell lock preview     show the lock screen without locking
+#   twilight-shell config init      create the settings files that don't exist yet
 #
 # From a checkout it uses the modules in modules/, installed it uses the ones
 # on the system.
@@ -13,6 +14,7 @@ here=$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)
 if [ -d "$here/modules/core/Twilight" ]; then
     root=$here
     lock=$here/modules/lock
+    modules=$here/modules
     for module in "$here"/modules/*; do
         QML_IMPORT_PATH="${QML_IMPORT_PATH:+$QML_IMPORT_PATH:}$module"
     done
@@ -20,6 +22,26 @@ if [ -d "$here/modules/core/Twilight" ]; then
 else
     root=$here/share/twilight-shell
     lock=$root/lock
+    modules=$here/lib/qt6/qml/Twilight
+fi
+
+# Every component ships its defaults as <name>.defaults.toml. Starting one
+# creates its own settings file, this does it for all of them at once. A file
+# that exists is left alone.
+if [ "$1" = config ] && [ "$2" = init ]; then
+    dir=${XDG_CONFIG_HOME:-$HOME/.config}/twilight-shell
+    mkdir -p "$dir"
+    find "$modules" -name '*.defaults.toml' | sort | while read -r file; do
+        name=$(basename "$file" .defaults.toml)
+        if [ -e "$dir/$name.toml" ]; then
+            echo "$name.toml exists"
+        else
+            printf '# Every setting with its default value. Change what you like.\n\n' > "$dir/$name.toml"
+            cat "$file" >> "$dir/$name.toml"
+            echo "$name.toml created"
+        fi
+    done
+    exit 0
 fi
 
 # The lock screen is a process of its own that exits once unlocked, so it isn't

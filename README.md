@@ -16,6 +16,7 @@ on their own. This repository puts them together and says how they are connected
 | [popouts](https://github.com/twilight-shell/popouts) | The calendar and the sound mixer that drop from the bar. |
 | [notifications](https://github.com/twilight-shell/notifications) | The notification daemon and its cards. |
 | [lock](https://github.com/twilight-shell/lock) | The lock screen. |
+| [wallpaper](https://github.com/twilight-shell/wallpaper) | The wallpaper, a picture or live stars. |
 
 If you want only one of them, install that one: each README says how.
 
@@ -66,6 +67,7 @@ home directory instead.
 ```sh
 twilight-shell ipc call launcher toggle
 twilight-shell ipc call popout toggle calendar   # or sound
+twilight-shell ipc call wallpaper next           # or prev, set <path>, live stars
 ```
 
 The lock screen is not part of the running shell: `twilight-shell lock` starts
@@ -76,8 +78,12 @@ be restarted at any time without touching a lock that is up.
 ## Settings
 
 One TOML file per component in `~/.config/twilight-shell/`, applied as soon as
-it is saved: `theme.toml`, `bar.toml`, `app-launcher.toml`, `lock.toml`. The keys are in each
-component's README.
+it is saved: `theme.toml`, `bar.toml`, `app-launcher.toml`, `lock.toml`,
+`wallpaper.toml`. The keys are in each component's README.
+
+A component creates its own file, filled with the defaults, the first time it
+starts. `twilight-shell config init` creates all of them at once and leaves the
+ones that exist alone.
 
 ## Updating
 
