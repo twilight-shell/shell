@@ -1,5 +1,7 @@
 # twilight-shell/shell
 
+[![ci](https://github.com/twilight-shell/shell/actions/workflows/ci.yml/badge.svg)](https://github.com/twilight-shell/shell/actions/workflows/ci.yml)
+
 A Twilight Sparkle themed desktop shell for Wayland, built with
 [Quickshell](https://quickshell.org). Dark purple and pink sticker look, the
 Monocraft font, and a lot of springy animation.
@@ -139,6 +141,10 @@ version that is.
 ```sh
 git submodule foreach 'git describe --tags --always'
 ```
+
+## Contributing
+
+Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md). Agents and the like: [AGENTS.md](AGENTS.md).
 
 ## License
 
