@@ -65,6 +65,19 @@ sudo make install        # the modules to /usr/lib/qt6/qml, twilight-shell to /u
 `make install PREFIX=~/.local QMLDIR=~/.local/lib/qt6/qml` puts everything in your
 home directory instead.
 
+To install only some of the components, say which, and what they need comes with
+them:
+
+```sh
+sudo make install ONLY="bar"                 # the bar, with core and compositor
+sudo make install ONLY="app-launcher lock"   # two, with core
+```
+
+Without the shell that puts them together (no `twilight-shell`, no `shell.qml`),
+so each runs on its own: `qs -p /path/to/bar`. What a component needs is in the
+`DEPENDS` file of its repository, and its own `make install` says so when
+something is missing.
+
 ## IPC
 
 `twilight-shell ipc call ...` talks to the shell that runs.
