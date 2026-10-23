@@ -150,7 +150,7 @@ Twilight は画面の隅に住んでいます。下端を散歩し、吹き出�
 すべてを、組み合わせるシェルと一緒に：
 
 ```sh
-git clone --recurse-submodules git@github.com:twilight-shell/shell.git
+git clone --recurse-submodules https://github.com/twilight-shell/shell.git
 cd shell
 sudo make install        # the modules to /usr/lib/qt6/qml, twilight-shell to /usr/bin
 ```
@@ -283,7 +283,7 @@ graph LR
 プラグインは `plugin.toml` と少しの QML を入れたフォルダです。ウィンドウを描いたり、IPC 呼び出しに応答したり、バーに島を置いたり、設定ウィンドウにページを持ったりできます。設定ウィンドウか `plugins.toml` でオンにするまで、何も動きません。[plugin-template](https://github.com/twilight-shell/plugin-template) から始め、仕組みは [plugins](https://github.com/twilight-shell/plugins) で読んでください。
 
 ```sh
-git clone git@github.com:twilight-shell/plugin-template.git ~/.local/share/twilight-shell/plugins/my-plugin
+git clone https://github.com/twilight-shell/plugin-template.git ~/.local/share/twilight-shell/plugins/my-plugin
 ```
 
 プラグインはあなたの権限で動くコードで、サンドボックスはありません。信頼できるものだけをオンにしてください。

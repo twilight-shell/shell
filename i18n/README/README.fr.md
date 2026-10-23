@@ -150,7 +150,7 @@ Une page pour chaque composant qui décrit ses réglages : rien à enregistrer, 
 Tout, avec le shell qui l'assemble :
 
 ```sh
-git clone --recurse-submodules git@github.com:twilight-shell/shell.git
+git clone --recurse-submodules https://github.com/twilight-shell/shell.git
 cd shell
 sudo make install        # the modules to /usr/lib/qt6/qml, twilight-shell to /usr/bin
 ```
@@ -283,7 +283,7 @@ graph LR
 Un plugin est un dossier avec un `plugin.toml` et un peu de QML. Il peut dessiner des fenêtres, répondre à des appels IPC, mettre un îlot dans la barre et avoir une page dans la fenêtre de réglages. Rien ne tourne tant que vous ne l'activez pas dans la fenêtre de réglages ou dans `plugins.toml`. Partez du [plugin-template](https://github.com/twilight-shell/plugin-template), et lisez comment tout cela fonctionne dans [plugins](https://github.com/twilight-shell/plugins).
 
 ```sh
-git clone git@github.com:twilight-shell/plugin-template.git ~/.local/share/twilight-shell/plugins/my-plugin
+git clone https://github.com/twilight-shell/plugin-template.git ~/.local/share/twilight-shell/plugins/my-plugin
 ```
 
 Un plugin est du code qui s'exécute avec vos droits, et il n'y a pas de bac à sable. N'activez que ceux en qui vous avez confiance.
