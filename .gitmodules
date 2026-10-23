@@ -31,3 +31,6 @@
 [submodule "modules/settings"]
 	path = modules/settings
 	url = ../settings
+[submodule "modules/plugins"]
+	path = modules/plugins
+	url = ../plugins
