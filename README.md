@@ -128,6 +128,18 @@ affiliated with or endorsed by Hasbro or Desktop Ponies.
 The font is [Monocraft](https://github.com/IdreesInc/Monocraft), patched with
 Nerd Font symbols.
 
+## Versions
+
+Every repository is versioned on its own ([Semantic Versioning](https://semver.org),
+with a tag `v0.1.0` for each release and a `CHANGELOG.md` that says what is in
+it). A release of the shell is a set of components that were tested together:
+the submodules point at their commits, and `git describe` in a component says which
+version that is.
+
+```sh
+git submodule foreach 'git describe --tags --always'
+```
+
 ## License
 
 MIT, see `LICENSE`. The sprites keep their own license, CC BY-NC-SA 3.0.
