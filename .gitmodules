@@ -1,0 +1,15 @@
+[submodule "modules/core"]
+	path = modules/core
+	url = ../core
+[submodule "modules/compositor"]
+	path = modules/compositor
+	url = ../compositor
+[submodule "modules/app-launcher"]
+	path = modules/app-launcher
+	url = ../app-launcher
+[submodule "modules/bar"]
+	path = modules/bar
+	url = ../bar
+[submodule "modules/popouts"]
+	path = modules/popouts
+	url = ../popouts
