@@ -44,6 +44,7 @@ The checks CI runs are scripts in the [`.github` repository](https://github.com/
 
 ## This repository
 
+- The README is in English and `i18n/README/README.<lang>.md` are hand-written translations with the same structure (same headings, code blocks, images and links). When you change the English README, update the translations or say they are behind. The contents between `<!-- toc:start -->` and `<!-- toc:end -->` is generated: run `scripts/readme-toc.py README.md i18n/README/*.md` after changing a heading, never edit it by hand.
 - Wiring goes here and nowhere else: if two components have to know about each other, pass a property or a signal through `shell.qml`.
 - A new component is a submodule, a line in `MODULES` of the `Makefile`, an entry in `shell.qml` and a row in the README. A change to a component reaches here as a pull request that moves its submodule.
 - The running shell reads the module path at startup: a new module needs a restart, not a reload.
