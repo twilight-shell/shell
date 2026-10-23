@@ -1,6 +1,6 @@
 PREFIX ?= /usr
 QMLDIR ?= $(PREFIX)/lib/qt6/qml
-MODULES = core compositor app-launcher bar popouts
+MODULES = core compositor app-launcher bar popouts notifications
 
 install:
 	for m in $(MODULES); do \

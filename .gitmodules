@@ -13,3 +13,6 @@
 [submodule "modules/popouts"]
 	path = modules/popouts
 	url = ../popouts
+[submodule "modules/notifications"]
+	path = modules/notifications
+	url = ../notifications

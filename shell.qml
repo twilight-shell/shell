@@ -4,6 +4,7 @@ import Quickshell
 import Twilight.Bar
 import Twilight.Compositor
 import Twilight.Launcher
+import Twilight.Notifications
 import Twilight.Popouts
 
 // The twilight shell: every component stands on its own, and this is where
@@ -27,5 +28,10 @@ ShellRoot {
         id: popouts
 
         outputName: Compositor.focusedOutput
+    }
+
+    Notifications {
+        outputName: Compositor.focusedOutput
+        avoid: popouts.push
     }
 }

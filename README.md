@@ -14,8 +14,12 @@ on their own. This repository puts them together and says how they are connected
 | [bar](https://github.com/twilight-shell/bar) | The bar. |
 | [app-launcher](https://github.com/twilight-shell/app-launcher) | "Twilight's Library", the app launcher. |
 | [popouts](https://github.com/twilight-shell/popouts) | The calendar and the sound mixer that drop from the bar. |
+| [notifications](https://github.com/twilight-shell/notifications) | The notification daemon and its cards. |
 
 If you want only one of them, install that one: each README says how.
+
+The shell is the notification daemon, and only one daemon can own the name on the
+session bus: stop mako, dunst and the like when you switch to it.
 
 ## Requirements
 
