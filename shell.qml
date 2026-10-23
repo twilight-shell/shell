@@ -7,6 +7,7 @@ import Twilight.Launcher
 import Twilight.Mascot
 import Twilight.Notifications
 import Twilight.Osd
+import Twilight.Plugins
 import Twilight.Popouts
 import Twilight.Settings
 import Twilight.Wallpaper
@@ -50,9 +51,17 @@ ShellRoot {
         outputName: Compositor.focusedOutput
     }
 
+    Plugins {
+        id: plugins
+
+        outputName: Compositor.focusedOutput
+    }
+
     Settings {
         id: settings
 
         outputName: Compositor.focusedOutput
+        plugins: plugins.available
+        pluginDirs: plugins.dirs
     }
 }
