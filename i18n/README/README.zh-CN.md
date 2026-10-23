@@ -150,7 +150,7 @@ Twilight 住在屏幕的一角。她沿着底边散步，用气泡说话，音�
 全部安装，包括把它们组装起来的 shell：
 
 ```sh
-git clone --recurse-submodules git@github.com:twilight-shell/shell.git
+git clone --recurse-submodules https://github.com/twilight-shell/shell.git
 cd shell
 sudo make install        # the modules to /usr/lib/qt6/qml, twilight-shell to /usr/bin
 ```
@@ -283,7 +283,7 @@ graph LR
 插件是一个包含 `plugin.toml` 和一些 QML 的文件夹。它可以绘制窗口、响应 IPC 调用、在状态栏里放一个岛，并在设置窗口里拥有页面。除非你在设置窗口或 `plugins.toml` 中启用，否则什么都不会运行。从 [plugin-template](https://github.com/twilight-shell/plugin-template) 开始，并在 [plugins](https://github.com/twilight-shell/plugins) 中了解一切如何工作。
 
 ```sh
-git clone git@github.com:twilight-shell/plugin-template.git ~/.local/share/twilight-shell/plugins/my-plugin
+git clone https://github.com/twilight-shell/plugin-template.git ~/.local/share/twilight-shell/plugins/my-plugin
 ```
 
 插件是以你的权限运行的代码，没有沙箱。只启用你信任的插件。

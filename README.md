@@ -171,7 +171,7 @@ its page the same way. The palette page lets you make a palette of your own with
 Everything, with the shell that puts it together:
 
 ```sh
-git clone --recurse-submodules git@github.com:twilight-shell/shell.git
+git clone --recurse-submodules https://github.com/twilight-shell/shell.git
 cd shell
 sudo make install        # the modules to /usr/lib/qt6/qml, twilight-shell to /usr/bin
 ```
@@ -314,7 +314,7 @@ and have a page in the settings window. Nothing runs until you switch it on in t
 all works in [plugins](https://github.com/twilight-shell/plugins).
 
 ```sh
-git clone git@github.com:twilight-shell/plugin-template.git ~/.local/share/twilight-shell/plugins/my-plugin
+git clone https://github.com/twilight-shell/plugin-template.git ~/.local/share/twilight-shell/plugins/my-plugin
 ```
 
 A plugin is code that runs with your rights, and there is no sandbox. Switch on only the ones you trust.

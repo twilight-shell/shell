@@ -150,7 +150,7 @@
 Всё целиком, вместе с оболочкой, которая всё собирает:
 
 ```sh
-git clone --recurse-submodules git@github.com:twilight-shell/shell.git
+git clone --recurse-submodules https://github.com/twilight-shell/shell.git
 cd shell
 sudo make install        # the modules to /usr/lib/qt6/qml, twilight-shell to /usr/bin
 ```
@@ -283,7 +283,7 @@ graph LR
 Плагин это папка с `plugin.toml` и немного QML. Он может рисовать окна, отвечать на IPC-вызовы, добавлять остров в бар и иметь страницу в окне настроек. Ничего не запускается, пока вы не включите это в окне настроек или в `plugins.toml`. Начните с [plugin-template](https://github.com/twilight-shell/plugin-template), а как всё устроено, читайте в [plugins](https://github.com/twilight-shell/plugins).
 
 ```sh
-git clone git@github.com:twilight-shell/plugin-template.git ~/.local/share/twilight-shell/plugins/my-plugin
+git clone https://github.com/twilight-shell/plugin-template.git ~/.local/share/twilight-shell/plugins/my-plugin
 ```
 
 Плагин это код, который работает с вашими правами, и песочницы нет. Включайте только те, которым доверяете.
