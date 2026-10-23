@@ -18,6 +18,7 @@ on their own. This repository puts them together and says how they are connected
 | [lock](https://github.com/twilight-shell/lock) | The lock screen. |
 | [wallpaper](https://github.com/twilight-shell/wallpaper) | The wallpaper, a picture or live stars. |
 | [osd](https://github.com/twilight-shell/osd) | The volume pop-up. |
+| [mascot](https://github.com/twilight-shell/mascot) | Twilight herself, strolling along the bottom edge. Her sprites are downloaded separately, see its README. |
 
 If you want only one of them, install that one: each README says how.
 
@@ -69,6 +70,7 @@ home directory instead.
 twilight-shell ipc call launcher toggle
 twilight-shell ipc call popout toggle calendar   # or sound
 twilight-shell ipc call wallpaper next           # or prev, set <path>, live stars
+twilight-shell ipc call mascot toggle            # or say <text>
 ```
 
 The lock screen is not part of the running shell: `twilight-shell lock` starts
@@ -80,7 +82,7 @@ be restarted at any time without touching a lock that is up.
 
 One TOML file per component in `~/.config/twilight-shell/`, applied as soon as
 it is saved: `theme.toml`, `bar.toml`, `app-launcher.toml`, `lock.toml`,
-`wallpaper.toml`. The keys are in each component's README.
+`wallpaper.toml`, `mascot.toml`. The keys are in each component's README.
 
 A component creates its own file, filled with the defaults, the first time it
 starts. `twilight-shell config init` creates all of them at once and leaves the
@@ -95,6 +97,19 @@ git pull --recurse-submodules
 git submodule update --remote modules/bar    # take the newest bar
 ```
 
+## Credits
+
+The mascot's sprites aren't part of this project: its
+`scripts/get-sprites.sh` downloads Twilight Sparkle's from
+[Desktop Ponies](https://github.com/RoosterDragon/Desktop-Ponies), the work of
+RoosterDragon and the many artists who drew and shared them under CC BY-NC-SA
+3.0 ([credits](https://github.com/RoosterDragon/Desktop-Ponies/blob/master/Content/credits.txt)).
+Thank you. My Little Pony: Friendship is Magic is © Hasbro; this project isn't
+affiliated with or endorsed by Hasbro or Desktop Ponies.
+
+The font is [Monocraft](https://github.com/IdreesInc/Monocraft), patched with
+Nerd Font symbols.
+
 ## License
 
-MIT, see `LICENSE`.
+MIT, see `LICENSE`. The sprites keep their own license, CC BY-NC-SA 3.0.

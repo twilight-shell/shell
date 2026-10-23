@@ -4,6 +4,7 @@ import Quickshell
 import Twilight.Bar
 import Twilight.Compositor
 import Twilight.Launcher
+import Twilight.Mascot
 import Twilight.Notifications
 import Twilight.Osd
 import Twilight.Popouts
@@ -40,6 +41,10 @@ ShellRoot {
     }
 
     Osd {
+        outputName: Compositor.focusedOutput
+    }
+
+    Mascot {
         outputName: Compositor.focusedOutput
     }
 }
