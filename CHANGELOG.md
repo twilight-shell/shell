@@ -3,6 +3,10 @@
 Versions follow [Semantic Versioning](https://semver.org). Until 1.0, a minor version
 may change how things work.
 
+## Unreleased
+
+- A README with a table of contents, screenshots, a preview video and the whole story of installing and using the shell, and its translations into ten languages (`i18n/README/`).
+
 ## 0.1.0 - 2026-10-24
 
 The first release.

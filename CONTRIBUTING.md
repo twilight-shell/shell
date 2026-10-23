@@ -11,6 +11,7 @@ Thank you for helping. The guide for every repository of the organization is [he
 
 ## Good to know
 
+- The README is in English; `i18n/README/README.<lang>.md` are its translations, written by hand. When you change the English text, change the translations if you can, or say in the pull request that they are behind. The contents at the top are made, not written: after changing a heading run `scripts/readme-toc.py README.md i18n/README/*.md`.
 - Wiring goes here and nowhere else: if two components have to know about each other, pass a property or a signal through `shell.qml`.
 - A new component is a submodule, a line in `MODULES` of the `Makefile`, an entry in `shell.qml` and a row in the README. A change to a component reaches here as a pull request that moves its submodule.
 - The running shell reads the module path at startup: a new module needs a restart, not a reload.
