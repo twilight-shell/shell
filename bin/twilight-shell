@@ -2,6 +2,8 @@
 # Starts the twilight shell, or talks to the one that runs:
 #   twilight-shell
 #   twilight-shell ipc call launcher toggle
+#   twilight-shell lock             lock the session
+#   twilight-shell lock preview     show the lock screen without locking
 #
 # From a checkout it uses the modules in modules/, installed it uses the ones
 # on the system.
@@ -10,12 +12,23 @@ here=$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)
 
 if [ -d "$here/modules/core/Twilight" ]; then
     root=$here
+    lock=$here/modules/lock
     for module in "$here"/modules/*; do
         QML_IMPORT_PATH="${QML_IMPORT_PATH:+$QML_IMPORT_PATH:}$module"
     done
     export QML_IMPORT_PATH
 else
     root=$here/share/twilight-shell
+    lock=$root/lock
+fi
+
+# The lock screen is a process of its own that exits once unlocked, so it isn't
+# part of the shell that runs.
+if [ "$1" = lock ]; then
+    if [ "$2" = preview ]; then
+        exec qs -p "$lock/preview.qml"
+    fi
+    exec qs -p "$lock" --no-duplicate
 fi
 
 exec qs -p "$root" "$@"
