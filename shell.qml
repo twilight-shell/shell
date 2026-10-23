@@ -5,6 +5,7 @@ import Twilight.Bar
 import Twilight.Compositor
 import Twilight.Launcher
 import Twilight.Notifications
+import Twilight.Osd
 import Twilight.Popouts
 import Twilight.Wallpaper
 
@@ -36,5 +37,9 @@ ShellRoot {
     Notifications {
         outputName: Compositor.focusedOutput
         avoid: popouts.push
+    }
+
+    Osd {
+        outputName: Compositor.focusedOutput
     }
 }

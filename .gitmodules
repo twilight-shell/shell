@@ -22,3 +22,6 @@
 [submodule "modules/wallpaper"]
 	path = modules/wallpaper
 	url = ../wallpaper
+[submodule "modules/osd"]
+	path = modules/osd
+	url = ../osd

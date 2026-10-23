@@ -17,6 +17,7 @@ on their own. This repository puts them together and says how they are connected
 | [notifications](https://github.com/twilight-shell/notifications) | The notification daemon and its cards. |
 | [lock](https://github.com/twilight-shell/lock) | The lock screen. |
 | [wallpaper](https://github.com/twilight-shell/wallpaper) | The wallpaper, a picture or live stars. |
+| [osd](https://github.com/twilight-shell/osd) | The volume pop-up. |
 
 If you want only one of them, install that one: each README says how.
 
