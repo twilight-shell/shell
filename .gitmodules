@@ -25,3 +25,6 @@
 [submodule "modules/osd"]
 	path = modules/osd
 	url = ../osd
+[submodule "modules/mascot"]
+	path = modules/mascot
+	url = ../mascot
