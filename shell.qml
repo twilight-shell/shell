@@ -20,6 +20,7 @@ ShellRoot {
     Bar {
         activePopout: popouts.open
         launcherOpen: launcher.opened
+        extras: plugins.barWidgets
 
         onPopoutRequested: name => popouts.toggle(name)
         onLauncherRequested: launcher.toggle()
