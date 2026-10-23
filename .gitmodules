@@ -28,3 +28,6 @@
 [submodule "modules/mascot"]
 	path = modules/mascot
 	url = ../mascot
+[submodule "modules/settings"]
+	path = modules/settings
+	url = ../settings
