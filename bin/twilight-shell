@@ -1,0 +1,21 @@
+#!/bin/sh
+# Starts the twilight shell, or talks to the one that runs:
+#   twilight-shell
+#   twilight-shell ipc call launcher toggle
+#
+# From a checkout it uses the modules in modules/, installed it uses the ones
+# on the system.
+
+here=$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)
+
+if [ -d "$here/modules/core/Twilight" ]; then
+    root=$here
+    for module in "$here"/modules/*; do
+        QML_IMPORT_PATH="${QML_IMPORT_PATH:+$QML_IMPORT_PATH:}$module"
+    done
+    export QML_IMPORT_PATH
+else
+    root=$here/share/twilight-shell
+fi
+
+exec qs -p "$root" "$@"
