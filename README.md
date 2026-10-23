@@ -15,6 +15,7 @@ on their own. This repository puts them together and says how they are connected
 | [app-launcher](https://github.com/twilight-shell/app-launcher) | "Twilight's Library", the app launcher. |
 | [popouts](https://github.com/twilight-shell/popouts) | The calendar and the sound mixer that drop from the bar. |
 | [notifications](https://github.com/twilight-shell/notifications) | The notification daemon and its cards. |
+| [lock](https://github.com/twilight-shell/lock) | The lock screen. |
 
 If you want only one of them, install that one: each README says how.
 
@@ -42,6 +43,7 @@ spawn-at-startup "/path/to/shell/bin/twilight-shell"
 
 binds {
     Mod+P { spawn "/path/to/shell/bin/twilight-shell" "ipc" "call" "launcher" "toggle"; }
+    Mod+Alt+Shift+L { spawn "/path/to/shell/bin/twilight-shell" "lock"; }
 }
 ```
 
@@ -66,10 +68,15 @@ twilight-shell ipc call launcher toggle
 twilight-shell ipc call popout toggle calendar   # or sound
 ```
 
+The lock screen is not part of the running shell: `twilight-shell lock` starts
+a process that locks the session and exits once it is unlocked, and
+`twilight-shell lock preview` shows the screen without locking. So the shell can
+be restarted at any time without touching a lock that is up.
+
 ## Settings
 
 One TOML file per component in `~/.config/twilight-shell/`, applied as soon as
-it is saved: `theme.toml`, `bar.toml`, `app-launcher.toml`. The keys are in each
+it is saved: `theme.toml`, `bar.toml`, `app-launcher.toml`, `lock.toml`. The keys are in each
 component's README.
 
 ## Updating

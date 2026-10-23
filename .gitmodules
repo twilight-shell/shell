@@ -16,3 +16,6 @@
 [submodule "modules/notifications"]
 	path = modules/notifications
 	url = ../notifications
+[submodule "modules/lock"]
+	path = modules/lock
+	url = ../lock
