@@ -8,6 +8,7 @@ import Twilight.Mascot
 import Twilight.Notifications
 import Twilight.Osd
 import Twilight.Popouts
+import Twilight.Settings
 import Twilight.Wallpaper
 
 // The twilight shell: every component stands on its own, and this is where
@@ -21,6 +22,7 @@ ShellRoot {
 
         onPopoutRequested: name => popouts.toggle(name)
         onLauncherRequested: launcher.toggle()
+        onSettingsRequested: settings.toggle()
     }
 
     Launcher {
@@ -45,6 +47,12 @@ ShellRoot {
     }
 
     Mascot {
+        outputName: Compositor.focusedOutput
+    }
+
+    Settings {
+        id: settings
+
         outputName: Compositor.focusedOutput
     }
 }

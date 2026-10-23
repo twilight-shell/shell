@@ -18,6 +18,7 @@ on their own. This repository puts them together and says how they are connected
 | [lock](https://github.com/twilight-shell/lock) | The lock screen. |
 | [wallpaper](https://github.com/twilight-shell/wallpaper) | The wallpaper, a picture or live stars. |
 | [osd](https://github.com/twilight-shell/osd) | The volume pop-up. |
+| [settings](https://github.com/twilight-shell/settings) | The settings window: palettes of your own and a page for every component that describes its settings. |
 | [mascot](https://github.com/twilight-shell/mascot) | Twilight herself, strolling along the bottom edge. Her sprites are downloaded separately, see its README. |
 
 If you want only one of them, install that one: each README says how.
@@ -47,6 +48,7 @@ spawn-at-startup "/path/to/shell/bin/twilight-shell"
 binds {
     Mod+P { spawn "/path/to/shell/bin/twilight-shell" "ipc" "call" "launcher" "toggle"; }
     Mod+Alt+Shift+L { spawn "/path/to/shell/bin/twilight-shell" "lock"; }
+    Mod+S { spawn "/path/to/shell/bin/twilight-shell" "ipc" "call" "settings" "toggle"; }
 }
 ```
 
@@ -71,6 +73,7 @@ twilight-shell ipc call launcher toggle
 twilight-shell ipc call popout toggle calendar   # or sound
 twilight-shell ipc call wallpaper next           # or prev, set <path>, live stars
 twilight-shell ipc call mascot toggle            # or say <text>
+twilight-shell ipc call settings toggle          # or open <tab>
 ```
 
 The lock screen is not part of the running shell: `twilight-shell lock` starts

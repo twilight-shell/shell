@@ -1,6 +1,6 @@
 PREFIX ?= /usr
 QMLDIR ?= $(PREFIX)/lib/qt6/qml
-MODULES = core compositor app-launcher bar popouts notifications lock wallpaper osd mascot
+MODULES = core compositor app-launcher bar popouts notifications lock wallpaper osd mascot settings
 
 install:
 	for m in $(MODULES); do \
