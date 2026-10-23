@@ -19,3 +19,6 @@
 [submodule "modules/lock"]
 	path = modules/lock
 	url = ../lock
+[submodule "modules/wallpaper"]
+	path = modules/wallpaper
+	url = ../wallpaper
